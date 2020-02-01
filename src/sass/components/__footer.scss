@@ -1,0 +1,11 @@
+.footer {
+    width: 100%;
+    
+    > p {
+        text-align: center;
+        text-transform: lowercase;
+        background: $rgba;
+        padding: 5px 0;
+        color: $cor-principal;
+    }
+}

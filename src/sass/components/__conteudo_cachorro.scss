@@ -1,9 +1,17 @@
 
 .conteudo__cachorro {
-    max-width: 100%;
+    max-width: 500px;
     height: 400px;
     text-align: center;
-    padding: 10px 60px;
+
+    blockquote {
+        background: #ccc;
+        display: inline-block;
+        width: 100%;
+        padding: 20px 10px;
+        word-wrap: break-word;
+        font-family: monospace;
+    }
 
     &__imagem {
         max-width: 100%;
@@ -11,7 +19,7 @@
         z-index: 1;
         box-shadow: 0 0 0 6px rgba(7, 5, 5, 0.863);
         border: 10px solid transparent;
-        width: 400px;
+        width: 500px;
         height: 300px; 
     }
 
@@ -21,7 +29,7 @@
         position: relative;
         bottom: 40px;
         left: 10px;
-        max-width: 200px;
+        max-width: 230px;
         word-wrap: break-word;
         font-size: 16px;
         font-weight: 500;

@@ -1,16 +1,6 @@
 .conteudo__formulario-btnSalvar, .conteudo__formulario-btnResetar {
-    position: relative;
-    bottom: 0;
-    padding: 5px 10px;
-    background: $back-button;
-    border: 0;
-    cursor: pointer;
-    color: #e6ded0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: ease-in-out 0.3s;
-    outline: none;
-
+    @include botao;
+    
     &:hover {
         background: $back-button-hover;  
     }

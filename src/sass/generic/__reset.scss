@@ -8,10 +8,10 @@ a {
     text-decoration: none;
 }
 
-ul {
-    list-style: none;
+a:hover {
+    text-decoration: underline;
 }
 
-input, select {
-    width: 100%;
+ul {
+    list-style: none;
 }

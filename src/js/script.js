@@ -2,7 +2,9 @@
 const fontes = document.getElementById('fontes')
 const cores = document.getElementById('cores')
 const racas = document.getElementById('racas')
+const racasoption = document.getElementsByTagName('option')
 const nomeDog = document.getElementById('nome-dog')
+const code = document.getElementById('code')
 const color = document.getElementById('cor')
 
 const inputDog = document.getElementById('input-dog')
@@ -10,9 +12,6 @@ const imagemdog = document.getElementById('cachorro_selecionado')
 const backDog = document.getElementById('nome-dog')
 
 let htmlRacas;
-
-// fontes
-
 
 const storageMyDog = JSON.parse(localStorage.getItem('meuDog'))
 
@@ -25,8 +24,11 @@ if(storageMyDog) {
     nomeDog.style.fontFamily = storageMyDog.fonte
 
     nomeDog.style.color = storageMyDog.cor
+    backDog.style.background = storageMyDog.background
     nomeDog.textContent = storageMyDog.nome
     inputDog.value = storageMyDog.nome
+
+    code.innerHTML = localStorage.getItem('meuDog')
 }
 
 // funcao padrao para pegar o item selecionado nos campos de select
@@ -35,7 +37,7 @@ function seleciona(item) {
 
         const indice_selecionado = item.options.selectedIndex;
         const valor = item.options[indice_selecionado].value
-        
+
         if (item.name === 'fontes') {
             console.log(valor)
             nomeDog.style.fontFamily = valor
@@ -128,39 +130,23 @@ function salvar() {
     if (!meuDog.fonte) return new AWN().warning('Escolha uma fonte', {durations: {warning: 3500}})
     if (!meuDog.cor) return new AWN().warning('Escolha uma cor', {durations: {warning: 3500}})
 
+    meuDog.horario = new Date().getTime()
+    
     let json = JSON.stringify(meuDog)
     localStorage.setItem('meuDog', json)
-    localStorage.setItem('horario-dog', new Date().getTime())
+
+    code.innerText = json
 
     new AWN().success('Cachorrinho salvo!', {durations: {sucess: 3500}})
 }
 
 function resetar() {
     localStorage.removeItem('meuDog')
-    localStorage.removeItem('horario-dog')
 
-    reloadInit()
     new AWN().success('Removido com sucesso!', {durations: {warning: 4000}})
+    setTimeout(() => {
+        window.location.reload()
+    }, 4000);
 }
 
 reloadInit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // filtrar a pesquisa pelo dominio utilizando select */
-//     campo_selecionado.onchange = function() {
-
-//         const indice_selecionado = campo_selecionado.options.selectedIndex;
-//         const valor_selecionado = campo_selecionado.options[indice_selecionado].innerHTML;
-// }
