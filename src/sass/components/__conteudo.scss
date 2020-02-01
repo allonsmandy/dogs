@@ -1,0 +1,24 @@
+.conteudo {
+    height: calc(100vh - 82px);
+    max-width: 850px;
+    @include displayflex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px auto 0 auto;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        border: 6px solid #C0BEB4;
+        padding: 15px;
+        margin-bottom: 20px;
+        height: 400px;
+    }
+
+    &__titulo {
+        font-family: $fonte-principal;
+        font-size: 4rem;
+    }
+}

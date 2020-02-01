@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./src/css/path/style.css"></link>
+    <script src="./src/css/path/index.var.js"></script>
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <title>Doguinhooos!</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="logo.jpg" alt="logo" class="header__img">
+
+        <nav class="header__menu">
+            <ul class="header__menu__links">
+                <li><a href="https://dog.ceo/dog-api/documentation/" target="_blank">API</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo__container">
+            <h2 class="conteudo__titulo">Crie!</h2>
+
+            
+            <div class="conteudo__formulario">
+                <input type="text" class="conteudo__formulario-nome" placeholder="Insira o nome do cachorro" id="input-dog">
+                <select name="racas" id="racas" class="conteudo__formulario-racas">
+                    <option disabled selected>Selecione uma raça</option>
+                </select>
+
+                <input type="color" name="cor" id="cor" class="conteudo__formulario-cor">
+                <select name="cores" id="cores" class="conteudo__formulario-cores">
+                    <option disabled selected>Escolha a cor</option>
+                    <option value="pink">Rosa</option>
+                    <option value="blue">Azul</option>
+                    <option value="green">Verde</option>
+                    <option value="brown">Marrom</option>
+                    <option value="white">Branco</option>
+                </select>
+
+                <select name="fontes" id="fontes" class="conteudo__formulario-fontes">
+                    <option disabled selected>Escolha a fonte</option>
+                    <option value="Bebas Neue">Bebas Neue</option>
+                    <option value="Dosis">Dosis</option>
+                    <option value="Crimson Text">Crimson Text</option>
+                    <option value="Dancing Script">Dancing Script</option>
+                    <option value="Satisfy">Satisfy</option>
+                </select>
+
+            </div>
+
+            <div class="conteudo__formulario__botoes">
+                <button class="conteudo__formulario-btnSalvar" id="salvar" onclick="salvar()">Salvar meu cachorro</button>
+                <button class="conteudo__formulario-btnResetar" id="resetar" onclick="resetar()">Resetar meu cachorro</button>
+            </div>
+
+        </div>
+        
+        <section class="conteudo__cachorro">
+            <img id="cachorro_selecionado" class="conteudo__cachorro__imagem">
+            <h1 id="nome-dog" class="conteudo__cachorro__titulo">Escreva um nome pra seu dog!</h1>
+        </section>
+
+    </main>
+
+
+    <!-- <footer class="footer">
+        <p>feito com carinho por <a href="https://allonsandy.github.io">Mandy</a></p>
+    </footer> -->
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
