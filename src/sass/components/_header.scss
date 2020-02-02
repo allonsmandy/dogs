@@ -1,10 +1,10 @@
 .header {
-    width: 100%;
     background: $back-header;
     color: $cor-font-light;
     justify-content: space-between;
     @include displayflex;
     padding: 0 20px;
+    width: 100vw;
 
     &__menu__links {
         display: flex;

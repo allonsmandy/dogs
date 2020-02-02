@@ -1,9 +1,7 @@
 .conteudo {
-    height: calc(100vh - 77px);
     max-width: 800px;
     @include displayflex;
     justify-content: space-between;
-    flex-wrap: wrap;
     margin: 0 auto;
 
     &__container {

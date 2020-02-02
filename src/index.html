@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./src/utils/style.css"></link>
-    <link rel="stylesheet" href="./dist/css/main.css">
+    <link rel="stylesheet" href="./assets/utils/style.css"></link>
+    <link rel="stylesheet" href="./css/main.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="./src/utils/index.var.js"></script>
+    <script src="./assets/utils/index.var.js"></script>
     <title>Doguinhooos!</title>
 </head>
 
@@ -69,6 +71,8 @@
         <section class="conteudo__cachorro">
             <img id="cachorro_selecionado" class="conteudo__cachorro__imagem" src="./assets/notfound.jpg">
             <h1 id="nome-dog" class="conteudo__cachorro__titulo">Escreva um nome pra seu dog!</h1>
+            <span class="conteudo__cachorro__data"><strong id="data"></strong></span>
+            
             <blockquote class="conteudo__cachorro__code" id="code">
                 o JSON com os dados do seu dog ficará aqui
             </blockquote>
@@ -76,11 +80,11 @@
 
     </main>
 
-
     <footer class="footer">
         <p>feito com carinho por <a href="https://allonsmandy.github.io" target="__blank">Mandy</a>❤️</p>
     </footer>
-    <script src="./dist/js/app.min.js"></script>
+    
+    <script src="js/app.min.js"></script>
 </body>
 
 </html>

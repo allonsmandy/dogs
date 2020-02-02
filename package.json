@@ -20,9 +20,11 @@
     "gulp-sass": "^4.0.2",
     "gulp-terser": "^1.2.0",
     "gulp-uglify": "^3.0.2",
+    "htmlclean": "^3.0.8",
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "awesome-notifications": "^3.1.0"
+    "awesome-notifications": "^3.1.0",
+    "gulp-htmlmin": "^5.0.1"
   }
 }

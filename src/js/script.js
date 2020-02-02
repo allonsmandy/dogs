@@ -6,6 +6,7 @@ const racasoption = document.getElementsByTagName('option')
 const nomeDog = document.getElementById('nome-dog')
 const code = document.getElementById('code')
 const color = document.getElementById('cor')
+const data = document.getElementById('data')
 
 const inputDog = document.getElementById('input-dog')
 const imagemdog = document.getElementById('cachorro_selecionado')
@@ -17,16 +18,32 @@ const storageMyDog = JSON.parse(localStorage.getItem('meuDog'))
 
 // Objeto com configurações que será salvo no localstorage
 let meuDog = {}
-console.log(storageMyDog)
-
+    
 // ver se ja tem item salvo no localstorage
-if(storageMyDog) {
-    nomeDog.style.fontFamily = storageMyDog.fonte
+if (storageMyDog) {
 
+    setTimeout(() => {
+        inputDog.value = storageMyDog.nome
+        meuDog.nome = storageMyDog.nome
+
+        fontes.value = storageMyDog.fonte
+        meuDog.fonte = storageMyDog.fonte
+
+        cores.value = storageMyDog.cor
+        meuDog.cor = storageMyDog.cor
+
+        cor.value = storageMyDog.background
+        meuDog.background = storageMyDog.cor
+
+        racas.value = storageMyDog.raca
+        meuDog.raca = storageMyDog.raca
+    }, 1000);
+    
+    nomeDog.style.fontFamily = storageMyDog.fonte
     nomeDog.style.color = storageMyDog.cor
-    backDog.style.background = storageMyDog.background
     nomeDog.textContent = storageMyDog.nome
-    inputDog.value = storageMyDog.nome
+    backDog.style.background = storageMyDog.background
+    data.textContent = `Cachorrinho salvo em ${new Date(storageMyDog.horario).toLocaleString()}`
 
     code.innerHTML = localStorage.getItem('meuDog')
 }
@@ -39,19 +56,16 @@ function seleciona(item) {
         const valor = item.options[indice_selecionado].value
 
         if (item.name === 'fontes') {
-            console.log(valor)
             nomeDog.style.fontFamily = valor
             meuDog.fonte = valor
         }
 
         if (item.name === 'cores') {
-            console.log(valor)
             nomeDog.style.color = valor
             meuDog.cor = valor
         }
 
         if (item.name === 'racas') {
-            console.log(valor)
             meuDog.raca = valor
             fetchImg(valor)
         }
@@ -64,7 +78,8 @@ function seleciona(item) {
 inputDog.onkeyup = function () {
 
     if(inputDog.value === '') {
-        nomeDog.textContent = 'Escreva um nome pra seu dog!'
+        new AWN().warning('Escreva um nome pra seu dog!', {durations: {warning: 3500}})
+
         return
     }
 
@@ -136,17 +151,21 @@ function salvar() {
     localStorage.setItem('meuDog', json)
 
     code.innerText = json
+    data.textContent = `Cachorrinho salvo em ${new Date(meuDog.horario).toLocaleString()}`
 
     new AWN().success('Cachorrinho salvo!', {durations: {sucess: 3500}})
 }
 
 function resetar() {
-    localStorage.removeItem('meuDog')
 
-    new AWN().success('Removido com sucesso!', {durations: {warning: 4000}})
-    setTimeout(() => {
-        window.location.reload()
-    }, 4000);
+        localStorage.removeItem('meuDog')
+
+        new AWN().success('Removido com sucesso!', {durations: {warning: 4000}})
+        setTimeout(() => {
+            window.location.reload()
+        }, 4000);
+
+
 }
 
 reloadInit()

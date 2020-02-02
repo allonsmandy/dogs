@@ -13,6 +13,14 @@
         font-family: monospace;
     }
 
+    &__data {
+        color: $cor-principal;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-family: $fonte-principal;
+    }
+
     &__imagem {
         max-width: 100%;
         position: relative;

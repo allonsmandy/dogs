@@ -1,5 +1,7 @@
 .footer {
-    width: 100%;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
     
     > p {
         text-align: center;

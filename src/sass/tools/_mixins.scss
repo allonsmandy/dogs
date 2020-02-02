@@ -1,6 +1,7 @@
 @mixin displayflex {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 @mixin botao {
