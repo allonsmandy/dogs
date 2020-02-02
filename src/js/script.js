@@ -5,7 +5,7 @@ const racas = document.getElementById('racas')
 const racasoption = document.getElementsByTagName('option')
 const nomeDog = document.getElementById('nome-dog')
 const code = document.getElementById('code')
-const color = document.getElementById('cor')
+const background = document.getElementById('background')
 const data = document.getElementById('data')
 
 const inputDog = document.getElementById('input-dog')
@@ -32,17 +32,20 @@ if (storageMyDog) {
         cores.value = storageMyDog.cor
         meuDog.cor = storageMyDog.cor
 
-        cor.value = storageMyDog.background
-        meuDog.background = storageMyDog.cor
+        background.value = storageMyDog.background
+        meuDog.background = storageMyDog.background
 
         racas.value = storageMyDog.raca
         meuDog.raca = storageMyDog.raca
+
+        meuDog.imagem = storageMyDog.imagem
     }, 1000);
     
     nomeDog.style.fontFamily = storageMyDog.fonte
     nomeDog.style.color = storageMyDog.cor
     nomeDog.textContent = storageMyDog.nome
     backDog.style.background = storageMyDog.background
+    imagemdog.src = storageMyDog.imagem
     data.textContent = `Cachorrinho salvo em ${new Date(storageMyDog.horario).toLocaleString()}`
 
     code.innerHTML = localStorage.getItem('meuDog')
@@ -87,11 +90,11 @@ inputDog.onkeyup = function () {
     meuDog.nome = inputDog.value
 }
 
-// muda background 
-color.onchange = function() {
-    backDog.style.background = color.value
+// muda background do texto
+background.onchange = function() {
+    backDog.style.background = background.value
 
-    meuDog.background = color.value
+    meuDog.background = background.value
 }
 
 // Pega a lista de dogs na api
@@ -164,7 +167,6 @@ function resetar() {
         setTimeout(() => {
             window.location.reload()
         }, 4000);
-
 
 }
 
