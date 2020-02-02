@@ -5,3 +5,27 @@
 - [demo](https://dogs-api.netlify.com/)
 
 - [challenge](https://github.com/enext-wpp/challenges/tree/master/challenge-two)
+
+# Rodando o projetinho
+- Primeiramente instale as depedências 
+```
+npm install
+```
+- Em seguida, você pode abrir o servidor através do gulp
+```
+npm run gulp server
+```
+
+### É possivel rodar outros comandos de acordo com a sua necessidade!! ^-^
+```
+npm run gulp listen
+```
+- Vai "ouvir" as alterações que você fizer no código e compilar para a pasta __dist/__ 
+```
+npm run gulp clean
+```
+- Apaga toda a pasta __dist/__
+```
+npm run gulp dist
+```
+- Cria a pasta __dist/__ com os arquivos minificados
